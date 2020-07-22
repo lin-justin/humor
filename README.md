@@ -44,7 +44,6 @@ Python 3.7
 
 - pytorch==1.5.1
 - torchtext==0.6.0
-- transformers==3.0.2
 - texthero==1.0.9
 
 ```
