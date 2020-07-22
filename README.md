@@ -57,8 +57,8 @@ To use spaCy tokenizer, make sure to run `python -m spacy download en` in the te
 
 The models were trained for 5 epochs, if I had more powerful hardware, I would (and should) train for longer.
 
-| Model | Test Loss | Test Acc | Train Loss | Train Acc | Val Loss | Val Acc |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---:
+| Model | Test Loss | Test Acc |
+| :---: | :---: | :---: |
 | RNN | 0.138 | 95.05% |
 | BiLSTM | 0.139 | 95.27% |
 
