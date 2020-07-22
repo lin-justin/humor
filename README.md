@@ -31,14 +31,12 @@ python train.py --model="rnn" \
     --output_dim=1 \
     --n_layers=2 \
     --lr=1e-3 \
-    --n_epochs=5 \
-    --n_filters=[3,4,5] \
-    --filter_sizes=100
+    --n_epochs=5 
 ```
 
 The script was ran in a virtual environment using Miniconda3 on WSL Ubuntu and on a CPU.
 
-Available models are `rnn`, `cnn`, `fasttext`, `bilistm`, and `distilbert`. **Please run** `distilbert` **on a GPU, one epoch on a CPU took 1 hour and 36 mins.**
+Available models are `rnn` and `bilistm`.
 
 ### Requirements
 
@@ -63,13 +61,8 @@ The models were trained for 5 epochs, if I had more powerful hardware, I would (
 | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | RNN | 0.138 | 95.05% |
 | BiLSTM | 0.139 | 95.27% |
-| FastText | 0.163 | 94.95% |
-| CNN | 0.128 | 95.41% |
-| DistilBERT | | | 0.095 | 96.55% | 0.096 | 96.46% |
 
-From the results, we can see that a Convolutional Neural Network model with default hyperparameters had the highest test accuracy as well as the lowest test loss. 
-
-The DistilBERT model was trained for **one epoch** due to hardware limitations, I did not use Google Colab to train these models because I need to learn good software/coding practice since notebooks can get messy and irreproducible. Additionally, using Google Colab's free GPU strains my internet's memory capacity. 
+I did not use Google Colab to train these models because I need to learn good software/coding practice since notebooks can get messy and irreproducible. Additionally, using Google Colab's free GPU strains my internet's memory capacity. 
 
 ### Reference
 
