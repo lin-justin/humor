@@ -41,21 +41,3 @@ The **forget gate** deletes information from the context that is no longer neede
 Next, we generate the mask for the **add gate** to select the information to add to the current context. Then we add this to the modified context vector to get a new context vector.
 
 The final gate, **output gate**, is used to decide what information is required for the current hidden state (as opposed to what information needs to be preserved for future decisions).
-
-**FastText**
-
-[FastText](https://arxiv.org/abs/1607.01759) uses a hierarchical classifier instead of a flat structure, in which the different categories are organized into a tree. This reduces the time complexities of training and testing text classifiers from linear to logarithmic with respect to the number of classes. The depth in the tree of very frequent categories is therefore smaller than for infrequent categories, leading to further computational efficiency.
-
-FastText represents a text by a low dimensional vector, which is obtained by summing vectors corresponding to the words appearing in the text. In fastText, a low dimensional vector is associated to each word of the vocabulary. This hidden representation is shared across all classifiers for different categories, allowing information about words learned for one category to be used by other categories. These kind of representations, bag of words, ignore word order. In fastText, vectors are used to represent ngrams to take into account local word order, important for many text classification problems.
-
-**Convolutional Neural Network**
-
-Refer to this [paper](https://arxiv.org/abs/1408.5882)
-
-**DistilBERT**
-
-[DistilBERT](https://arxiv.org/abs/1910.01108) is a small, fast, cheap, and light Transformer model trained by distilling BERT base. It has 40% less parameters, runs 60% faster while preserving over 95% of BERT's performances.
-
-A Gated Recurrent Unit (GRU) was used in my DistilBERT model. GRU has a reset gate,*r*, and an update gate, *z*. The purpose of the reset gate is to decide which aspects of the previous hiddent state are relevant to the current context and what can be ignored. This is accomplished by performing an element-wise multiplication or *r* with the value of the previous hidden state. We then use this masked value in computing an intermediate representation for the new hidden state at time *t*.
-
-The update gate *z* is to determine which aspects of this new state will be used directly in the new hidden state and which aspects of the previous state need to be preserved for future use. This is accomplished by using the values in *z* to interpolate between the old hidden state and the new one.
