@@ -1,4 +1,4 @@
 pytorch==1.5.1
 torchtext==0.6.0
-transformers==4.30.0
+transformers==4.48.0
 texthero==1.0.9
